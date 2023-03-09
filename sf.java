@@ -20,7 +20,7 @@ class sf implements ActionListener
         op2=b;
         op3=c;
         op4=d;
-        JLabel l =new JLabel(q);//ADD FONT IN LABEL
+        JLabel l =new JLabel(q);
         co=Integer.parseInt(correct)-1;
         l.setBounds(5,5,1500,50);
         f.setBounds(500,250,500,350);
@@ -52,21 +52,19 @@ class sf implements ActionListener
         {
             incorrect();   
         }
+        else{
         marks+=(rb[co].isSelected())? 1 : 0;
         f.dispose();
-        modify();
     }
-    void modify()
-    {
-        flag=1;
     }
+   
     void incorrect()
     {
         JPanel p1 = new JPanel();
         JLabel l =new JLabel("Correct Answer: "+rb[co].getText());
         JFrame inc = new JFrame();
         JButton button = new JButton("close");
-        inc.setBounds(550,400,350,100);
+        inc.setBounds(630,500,350,100);
         button.setBounds(240,20,70,30);
         l.setBounds(5,5,150,50);
         inc.add(p1);
@@ -74,11 +72,12 @@ class sf implements ActionListener
         inc.add(button);
         inc.setLayout(null);
         inc.setVisible(true);
-        
+       
         button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
             {
                 inc.dispose();
+                f.dispose();
             }
         });
     }
@@ -87,5 +86,6 @@ class sf implements ActionListener
         f.dispose();
         System.gc();
     }
+    
     
 }
