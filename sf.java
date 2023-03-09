@@ -49,15 +49,17 @@ class sf implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         if(!rb[co].isSelected())
-        {
             incorrect();   
-        }
         else{
         marks+=(rb[co].isSelected())? 1 : 0;
         f.dispose();
+        modify();
     }
     }
-   
+    void modify()
+    {
+        flag=1;
+    }
     void incorrect()
     {
         JPanel p1 = new JPanel();
@@ -78,6 +80,7 @@ class sf implements ActionListener
             {
                 inc.dispose();
                 f.dispose();
+                modify();
             }
         });
     }
