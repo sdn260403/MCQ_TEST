@@ -47,6 +47,8 @@ class bf implements ActionListener
     }  
     public void actionPerformed(ActionEvent e)
             {
+                if(count!=0)
+                    return;
                 fa.dispose();
                 f.dispose();
                 System.exit(0);
